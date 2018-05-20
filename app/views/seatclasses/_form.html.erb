@@ -1,0 +1,42 @@
+<%= form_with(model: seatclass, local: true) do |form| %>
+  <% if seatclass.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(seatclass.errors.count, "error") %> prohibited this seatclass from being saved:</h2>
+
+      <ul>
+      <% seatclass.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :class_name %>
+    <%= form.text_field :class_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :price %>
+    <%= form.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :food_sertvice %>
+    <%= form.check_box :food_sertvice %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seat_type %>
+    <%= form.text_field :seat_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :leg_room %>
+    <%= form.number_field :leg_room %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

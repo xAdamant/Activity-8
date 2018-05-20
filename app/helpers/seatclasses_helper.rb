@@ -1,0 +1,2 @@
+module SeatclassesHelper
+end
